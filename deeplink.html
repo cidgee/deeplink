@@ -64,7 +64,12 @@
 	<br>
 	<div id="tags"></div>
 	<a id="link_label" href="" target="_blank">open deeplink</a>
+	<br>
+	<br>
 	<a id="link_label_beta" href="" target="_blank">open deeplink (beta)</a>
+	<br>
+	<br>
+	<a id="link_label_pc" href="" target="_blank">open deeplink (pc)</a>
 	<br>
 	<br>
 	<script>
@@ -74,6 +79,7 @@
 		var tagsDiv = document.getElementById("tags");
 		var linkLabel = document.getElementById("link_label");
 		var linkLabelBeta = document.getElementById("link_label_beta");
+		var linkLabelPc = document.getElementById("link_label_pc");
 		input1.addEventListener("input", updateTags);
 		input2.addEventListener("input", updateTags);
 		input3.addEventListener("input", updateTags);
@@ -84,9 +90,11 @@
 			var debug_url = input3.value.trim();
 			var link = "videocut://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
 			var betaLink = "videocutbeta://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
+			var pcLink = "vega://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
 			tagsDiv.innerHTML = link;
 			linkLabel.href = link;
 			linkLabelBeta.href = betaLink;
+			linkLabelPc.href = pcLink;
 		}
 	</script>
 </body>
