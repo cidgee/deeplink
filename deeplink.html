@@ -64,6 +64,7 @@
 	<br>
 	<div id="tags"></div>
 	<a id="link_label" href="" target="_blank">open deeplink</a>
+	<a id="link_label_beta" href="" target="_blank">open deeplink (beta)</a>
 	<br>
 	<br>
 	<script>
@@ -72,6 +73,7 @@
 		var input3 = document.getElementById("input3");
 		var tagsDiv = document.getElementById("tags");
 		var linkLabel = document.getElementById("link_label");
+		var linkLabelBeta = document.getElementById("link_label_beta");
 		input1.addEventListener("input", updateTags);
 		input2.addEventListener("input", updateTags);
 		input3.addEventListener("input", updateTags);
@@ -81,9 +83,10 @@
 			var plugin_version = input2.value.trim();
 			var debug_url = input3.value.trim();
 			var link = "videocut://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
-
+			var betaLink = "videocutbeta://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
 			tagsDiv.innerHTML = link;
 			linkLabel.href = link;
+			linkLabelBeta.href = betaLink;
 		}
 	</script>
 </body>
