@@ -66,6 +66,9 @@
 	<a id="link_label" href="" target="_blank">open deeplink</a>
 	<br>
 	<br>
+	<a id="link_label_cc" href="" target="_blank">open deeplink(cc)</a>
+	<br>
+	<br>
 	<a id="link_label_beta" href="" target="_blank">open deeplink (beta)</a>
 	<br>
 	<br>
@@ -80,6 +83,7 @@
 		var linkLabel = document.getElementById("link_label");
 		var linkLabelBeta = document.getElementById("link_label_beta");
 		var linkLabelPc = document.getElementById("link_label_pc");
+		var linkLabelCC = document.getElementById("link_label_cc");
 		input1.addEventListener("input", updateTags);
 		input2.addEventListener("input", updateTags);
 		input3.addEventListener("input", updateTags);
@@ -91,10 +95,13 @@
 			var link = "videocut://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
 			var betaLink = "videocutbeta://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
 			var pcLink = "vega://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
+			var ccLink = "capcut://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
+
 			tagsDiv.innerHTML = link;
 			linkLabel.href = link;
 			linkLabelBeta.href = betaLink;
 			linkLabelPc.href = pcLink;
+			linkLabelCC.href = ccLink;
 		}
 	</script>
 </body>
