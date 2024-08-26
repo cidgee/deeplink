@@ -1,109 +1,39 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Plugin Deeplink</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
-			text-align: center;
-			padding-top: 50px;
-		}
-
-		h1 {
-			font-size: 36px;
-			color: #333;
-			margin-bottom: 30px;
-		}
-
-		label {
-			display: block;
-			font-size: 18px;
-			color: #666;
-			margin-bottom: 10px;
-		}
-
-		input[type="text"] {
-			padding: 10px;
-			font-size: 18px;
-			border-radius: 5px;
-			border: none;
-			background-color: #fff;
-			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-			width: 300px;
-			margin-bottom: 20px;
-		}
-
-		button[type="button"] {
-			background-color: #333;
-			color: #fff;
-			padding: 10px 20px;
-			border-radius: 5px;
-			border: none;
-			font-size: 18px;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
-
-		input[type="submit"]:hover {
-			background-color: #555;
-		}
-	</style>
-</head>
-
-<body>
-	<form id="myForm">
-		<label for="input1">plugin_id</label>
-		<input type="text" id="input1" name="input1"><br>
-		<label for="input2">plugin_version</label>
-		<input type="text" id="input2" name="input2"><br>
-		<label for="input3">debug_url</label>
-		<input type="text" id="input3" name="input3"><br>
-	</form>
-	<br>
-	<div id="tags"></div>
-	<a id="link_label" href="" target="_blank">open deeplink</a>
-	<br>
-	<br>
-	<a id="link_label_cc" href="" target="_blank">open deeplink(cc)</a>
-	<br>
-	<br>
-	<a id="link_label_beta" href="" target="_blank">open deeplink (beta)</a>
-	<br>
-	<br>
-	<a id="link_label_pc" href="" target="_blank">open deeplink (pc)</a>
-	<br>
-	<br>
-	<script>
-		var input1 = document.getElementById("input1");
-		var input2 = document.getElementById("input2");
-		var input3 = document.getElementById("input3");
-		var tagsDiv = document.getElementById("tags");
-		var linkLabel = document.getElementById("link_label");
-		var linkLabelBeta = document.getElementById("link_label_beta");
-		var linkLabelPc = document.getElementById("link_label_pc");
-		var linkLabelCC = document.getElementById("link_label_cc");
-		input1.addEventListener("input", updateTags);
-		input2.addEventListener("input", updateTags);
-		input3.addEventListener("input", updateTags);
-
-		function updateTags() {
-			var plugin_id = input1.value.trim();
-			var plugin_version = input2.value.trim();
-			var debug_url = input3.value.trim();
-			var link = "videocut://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
-			var betaLink = "videocutbeta://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
-			var pcLink = "vega://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
-			var ccLink = "capcut://plugin/open?plugin_id=" + encodeURIComponent(plugin_id) + "&plugin_version=" + encodeURIComponent(plugin_version) + "&debug_url=" + encodeURIComponent(debug_url);
-
-			tagsDiv.innerHTML = link;
-			linkLabel.href = link;
-			linkLabelBeta.href = betaLink;
-			linkLabelPc.href = pcLink;
-			linkLabelCC.href = ccLink;
-		}
-	</script>
-</body>
-
+<!DOCTYPE html> 
+<html> 
+ 
+<head> 
+ <style> 
+ body { 
+ font-family: Arial, sans-serif; 
+ text-align: center; 
+ } 
+ 
+ a { 
+ display: inline-block; 
+ padding: 10px 20px; 
+ background-color: #4CAF50; 
+ color: white; 
+ text-decoration: none; 
+ border-radius: 5px; 
+ margin: 10px; 
+ } 
+ 
+ @media (max-width: 600px) { 
+ a { 
+ padding: 8px 16px; 
+ font-size: 14px; 
+ } 
+ } 
+ </style> 
+</head> 
+ 
+<body> 
+ 
+ <h2>AI 媒体</h2> 
+ 
+ <a href="videocut://editor/create?component=material_gen_image&click=1">生图</a><br> 
+ <a href="videocut://editor/create?component=material_gen_video&click=1">生视频</a> 
+ 
+</body> 
+ 
 </html>
